@@ -12,9 +12,9 @@ const HomePage = () => {
   function SetRediobtn() {
     // console.log(e.target.value);
 
-    if (radio === "Show" && input) {
+    if (radio === "Shows" && input) {
       return <Shows input={input} error={seterror} />;
-    } else if (radio === "Actor" && input) {
+    } else if (radio === "Actors" && input) {
       return <Actor input={input} error={seterror} />;
     } else {
       return <></>;
@@ -26,9 +26,9 @@ const HomePage = () => {
       <div className="Homepage">
         <div className="inputBox">
           <div className="Tvmaza">
-            <i className="fa-solid fa-tv"></i>TVmaza
+            <i className="fa-solid fa-tv"></i>TV-maza
           </div>
-          <div className="SearchText">Search Your Favorit Show</div>
+          <div className="SearchText">Search Your Favourite Movies/Shows</div>
           <div>
             <form>
               <div className="rdo" onChange={(e) => setradio(e.target.value)}>
@@ -36,7 +36,7 @@ const HomePage = () => {
                 Actor <br />
                 <input
                   type="radio"
-                  value="Show"
+                  value="Shows"
                   id="shows"
                   name="radio"
                   error={seterror}
@@ -48,10 +48,10 @@ const HomePage = () => {
                 <input
                   className="input"
                   onChange={(e) => setinput(e.target.value)}
-                  placeholder={radio ? "Search " + radio : "Search move"}
+                  placeholder={ "Search movies/shows"}
                 />
                 <br></br>
-                {error ? <p style={{ color: "red" }}>NoFound</p> : <></>}
+                {error ? <p style={{ color: "red" }}>Not Found</p> : <></>}
                 {console.log(radio)}
               </div>
             </form>
